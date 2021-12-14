@@ -8,11 +8,10 @@ public class Main {
         Cats blackCats = new Cats();
         blackCats.nameCats = "cat 2";
 
-        Print firstPrint = new Print();
-        firstPrint.text = redCats.nameCats;
+        Print firstPrint = new Print(redCats.nameCats);
         firstPrint.printText();
 
-        firstPrint.text = blackCats.nameCats;
-        firstPrint.printText();
+        Print secondPrint = new Print(blackCats.nameCats);
+        secondPrint.printText();
     }
 }
