@@ -1,13 +1,14 @@
 package com.company.PrintAndCats;
 
 public class Print {
-    public Print(String nc){
-        text = nc;
+
+    public void printCat(Cat cat) {
+        System.out.println(cat.age + " years old " + cat.name);
+
     }
 
-    String text;
 
-    public void printText() {
+    public void printText(String text) {
         System.out.println(text);
     }
 }
