@@ -11,7 +11,9 @@ public class Main {
         blackCat.age = 3;
 
 
-        Print p = new Print();
+        Printer p = new Printer();
+        p.greeting = "Your cat is ";
+
         p.printCat(blackCat);
         p.printCat(redCat);
 
