@@ -12,10 +12,10 @@ public class Main {
 
 
         Printer p = new Printer();
-        p.greeting = "Your cat is ";
 
         p.printCat(blackCat);
         p.printCat(redCat);
+        p.printCatWithGreeting(blackCat,"Hello");
 
 //изучить паттерн singletone
         // конструктор без параметров и с параметрами
