@@ -8,4 +8,6 @@ public class Printer {
 
     }
 
+    //todo: create method that takes two arguments Cat and greeting message, and prints greeting message with cat name
+
 }
