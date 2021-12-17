@@ -3,14 +3,10 @@ package com.company.PrintAndCats;
 public class Printer {
 
     public void printCat(Cat cat) {
-        System.out.println(cat.age + " years old " + cat.name);
-
+        System.out.println(cat.getAge() + " years old " + cat.getName());
     }
 
-    public void printCatWithGreeting(Cat cat, String greeting){
-        System.out.println(greeting + " " + cat.name);
+    public void printCatWithGreeting(Cat cat, String greeting) {
+        System.out.printf("%s %s.", greeting, cat.getName());
     }
-
-    //todo: create method that takes two arguments Cat and greeting message, and prints greeting message with cat name
-
 }
