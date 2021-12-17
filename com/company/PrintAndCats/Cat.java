@@ -37,4 +37,8 @@ public class Cat {
         }
 
     }
+
+    public String toString(){
+        return "Name: " + name + ", age " + age;
+    }
 }

@@ -8,6 +8,9 @@ public class Main {
 
         Printer p = new Printer();
 
+        System.out.println(blackCat);
+        System.out.println(redCat);
+
         p.printCat(blackCat);
         p.printCat(redCat);
         p.printCatWithGreeting(blackCat, "Hello");
