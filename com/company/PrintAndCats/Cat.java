@@ -6,15 +6,12 @@ public class Cat extends Animal {
         super(name, age);
     }
 
+    @Override
     public void setAge(int age) {
         if (age < 0 || age > 40) {
-            System.out.println(name + "- возраст задан ошибочно");
+            System.out.println(name + "- возраст кошки задан ошибочно");
         } else
             this.age = age;
-    }
-
-    public String toString() {
-        return "Name: " + name + ", age " + age;
     }
 
 }

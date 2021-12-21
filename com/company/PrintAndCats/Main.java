@@ -2,7 +2,7 @@ package com.company.PrintAndCats;
 
 public class Main {
     public static void main(String[] args) {
-        final Cat redCat = new Cat("Barsik", 90);
+        final Cat redCat = new Cat("Barsik", 40);
 
         final Cat blackCat = new Cat("Murka", 3);
 
