@@ -7,10 +7,18 @@ import static com.company.Array.constants.ArrayMessages.*;
 public class Array {
     private final Scanner scanner = new Scanner(System.in);
     private String usersInput = "";
-    private boolean isIncorrectInput;
     private int numberOfColumns, numberOfLines;
+    private static Array array;
 
+    private Array() {
+    }
 
+    public static Array getInstance() {
+        if (array == null) {
+            array = new Array();
+        }
+        return array;
+    }
 
     public void startArray() {
         System.out.println(WELCOME_MESSAGE);
@@ -26,8 +34,8 @@ public class Array {
     }
 
     private void fillingTheMatrixRandomChar(char[][] array) {
-        for (int i = 0; i < numberOfLines; i++) {
-            for (int j = 0; j < numberOfColumns; j++) {
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[0].length; j++) {
                 int num = randomWithRange(33,126);
                 char charNum = (char) num;
                 array[i][j] = charNum;
@@ -36,8 +44,8 @@ public class Array {
     }
 
     private void printMatrix(char[][] array) {
-        for (int i = 0; i < numberOfLines; i++) {
-            for (int j = 0; j < numberOfColumns; j++) {
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[0].length; j++) {
                 System.out.printf("%3c",array[i][j]);
             }
             System.out.println("");
