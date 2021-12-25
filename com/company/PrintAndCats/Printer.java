@@ -1,11 +1,12 @@
 package com.company.PrintAndCats;
 
 public class Printer {
-    String greeting;
 
     public void printCat(Cat cat) {
-        System.out.println(greeting + cat.age + " years old " + cat.name);
-
+        System.out.println(cat.getAge() + " years old " + cat.getName());
     }
 
+    public void printCatWithGreeting(Cat cat, String greeting) {
+        System.out.printf("%s %s.", greeting, cat.getName());
+    }
 }

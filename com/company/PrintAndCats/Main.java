@@ -2,27 +2,19 @@ package com.company.PrintAndCats;
 
 public class Main {
     public static void main(String[] args) {
-        Cat redCat = new Cat();
-        redCat.name = "Barsik";
-        redCat.age = 1;
+        final Cat redCat = new Cat("Barsik", 40);
 
-        Cat blackCat = new Cat();
-        blackCat.name = "Murka";
-        blackCat.age = 3;
+        final Cat blackCat = new Cat("Murka", 3);
 
+       Printer p = new Printer();
 
-        Printer p = new Printer();
-        p.greeting = "Your cat is ";
+        System.out.println(blackCat);
+        System.out.println(redCat);
 
         p.printCat(blackCat);
         p.printCat(redCat);
+        p.printCatWithGreeting(blackCat, "Hello");
 
-//изучить паттерн singletone
-        // конструктор без параметров и с параметрами
-
-        // что такое свойства объектов (как происходит инициализация объектов?)
-
-        //как на принтере напечатать любой тип данных
 
     }
 }
