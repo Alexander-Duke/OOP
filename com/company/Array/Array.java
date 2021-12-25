@@ -2,12 +2,12 @@ package com.company.Array;
 
 import java.util.Scanner;
 import java.lang.Math;
+
 import static com.company.Array.constants.ArrayMessages.*;
 
 public class Array {
     private final Scanner scanner = new Scanner(System.in);
     private String usersInput = "";
-    private boolean isIncorrectInput;
     private int numberOfColumns, numberOfLines;
     private static Array array;
 
@@ -24,7 +24,6 @@ public class Array {
     public void startArray() {
         System.out.println(WELCOME_MESSAGE);
         while (!usersInput.contains(EXIT_MESSAGE)) {
-            isIncorrectInput = true;
             char[][] array = createMatrix();
             fillingTheMatrixRandomChar(array);
             printMatrix(array);
@@ -36,8 +35,8 @@ public class Array {
 
     private void fillingTheMatrixRandomChar(char[][] array) {
         for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array[0].length; j++) {
-                int num = randomWithRange(33,126);
+            for (int j = 0; j < array[i].length; j++) {
+                int num = randomWithRange(33, 126);
                 char charNum = (char) num;
                 array[i][j] = charNum;
             }
@@ -46,8 +45,8 @@ public class Array {
 
     private void printMatrix(char[][] array) {
         for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array[0].length; j++) {
-                System.out.printf("%3c",array[i][j]);
+            for (int j = 0; j < array[i].length; j++) {
+                System.out.printf("%3c", array[i][j]);
             }
             System.out.println("");
         }
@@ -58,8 +57,7 @@ public class Array {
         enterTheNumberOfColumns();
         System.out.print(ENTER_THE_NUMBER_OF_LINES);
         enterTheNumberOfLines();
-        char[][] array = new char[numberOfLines][numberOfColumns];
-        return array;
+        return new char[numberOfLines][numberOfColumns];
     }
 
     private void enterTheNumberOfLines() {
@@ -70,9 +68,8 @@ public class Array {
         numberOfColumns = scanner.nextInt();
     }
 
-    int randomWithRange(int min, int max){
-
+    private int randomWithRange(int min, int max) {
         int range = (max - min) + 1;
-        return (int)(Math.random() * range) + min;
+        return (int) (Math.random() * range) + min;
     }
 }
