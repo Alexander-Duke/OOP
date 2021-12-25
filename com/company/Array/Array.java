@@ -7,6 +7,7 @@ import static com.company.Array.constants.ArrayMessages.*;
 public class Array {
     private final Scanner scanner = new Scanner(System.in);
     private String usersInput = "";
+    private boolean isIncorrectInput;
     private int numberOfColumns, numberOfLines;
     private static Array array;
 
