@@ -30,7 +30,6 @@ public class Encryptor {
     private String arrayToString(String[] arrayPasswordInAsciiEncrypted) {
         String pas = "";
         for (int i = 0; i < arrayPasswordInAsciiEncrypted.length; i++) {
-
             if (i == 0) {
                 pas = arrayPasswordInAsciiEncrypted[i];
             } else pas = pas + arrayPasswordInAsciiEncrypted[i];

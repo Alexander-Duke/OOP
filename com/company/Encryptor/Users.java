@@ -6,8 +6,8 @@ public class Users {
 
 
     public Users(String userName, String password) {
-        setUserName(userName);
-        setPassword(password);
+        this.userName = userName;
+        this.password = password;
     }
 
     public String getUserName() {

@@ -2,18 +2,18 @@ package com.company.Encryptor;
 
 public class Decrypt {
 
-    public String decryptionPassword(String encryptionPassword){
+    public String decryptionPassword(String encryptionPassword) {
         int[] arrayPasswordInAscii = encryptionPasswordToArray(encryptionPassword);
-        return processingDecpription(arrayPasswordInAscii);
+        return processingDecrypt(arrayPasswordInAscii);
     }
 
-    private String processingDecpription(int[] array) {
+    private String processingDecrypt(int[] array) {
         String depas = "";
         char[] array2 = new char[array.length];
-        for (int i = 0; i <array.length; i++){
-            array2[i]= (char) (array[i]-i);
-            }
-        for (int i = 0; i <array2.length; i++){
+        for (int i = 0; i < array.length; i++) {
+            array2[i] = (char) (array[i] - i);
+        }
+        for (int i = 0; i < array2.length; i++) {
             if (i == 0) {
                 depas = "" + array2[i];
             } else depas = depas + array2[i];
@@ -21,7 +21,7 @@ public class Decrypt {
         return depas;
     }
 
-    private int[] encryptionPasswordToArray(String encryptionPassword){
+    private int[] encryptionPasswordToArray(String encryptionPassword) {
         String[] arrayPassword = stringPasswordToArray(encryptionPassword);
         int[] intArrayPassword = new int[arrayPassword.length];
         for (int i = 0; i < arrayPassword.length; i++) {
