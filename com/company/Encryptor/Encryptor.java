@@ -2,7 +2,6 @@ package com.company.Encryptor;
 
 public class Encryptor {
 
-
     public String encryptionPassword(Users users) {
         String passwordOriginal = users.getPassword();
         String[] arrayPasswordInAsciiEncrypted = encryptionToArray(passwordOriginal);
@@ -12,9 +11,10 @@ public class Encryptor {
     private String[] encryptionToArray(String passwordOriginal) {
         int sizeArray = passwordOriginal.length();
         String[] arrayPasswordInAscii = new String[sizeArray];
+
         for (int i = 0; i < sizeArray; i++) {
             char character = passwordOriginal.charAt(i);
-            int asciiNum = (int) character;
+            int asciiNum = character;
             int encryptedAsciiNum = asciiNum + i;
             String asciiToString = "" + encryptedAsciiNum;
             if (asciiToString.length() == 1) {
@@ -23,7 +23,6 @@ public class Encryptor {
                 asciiToString = "0" + asciiToString;
             }
             arrayPasswordInAscii[i] = asciiToString;
-            System.out.println(character + " = " + arrayPasswordInAscii[i]);
         }
         return arrayPasswordInAscii;
     }
