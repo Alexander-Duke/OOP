@@ -1,6 +1,6 @@
 package com.company.PrintAndCats;
 
-public class Animal {
+public abstract class Animal {
     protected String name;
     protected int age;
 
@@ -35,4 +35,5 @@ public class Animal {
                 ", age=" + age +
                 '}';
     }
+    public abstract void makeSound();
 }
