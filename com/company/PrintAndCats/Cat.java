@@ -1,10 +1,12 @@
 package com.company.PrintAndCats;
 
-public class Cat extends Animal {
+public class Cat extends Animal implements InfoMethodMovement {
 
     public Cat(String name, int age) {
         super(name, age);
     }
+
+    int runningSpeed = 30;
 
     @Override
     public void setAge(int age) {
@@ -13,6 +15,9 @@ public class Cat extends Animal {
         } else
             this.age = age;
     }
-//////////
+
+    public void methodOfMovement() {
+        System.out.print("cat running speed is " + this.runningSpeed + "km/h\n");
+    }
 }
 
