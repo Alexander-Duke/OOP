@@ -11,9 +11,12 @@ public class Main {
         p.printCatWithGreeting(cat, "Hello");
 
         outputInfoMethodOfMovement(cat);
+        cat.makeSound();
         outputInfoMethodOfMovement(bird);
+        bird.makeSound();
     }
 
+    //Application of the interface
     public static void outputInfoMethodOfMovement(InfoMethodMovement info){
         info.methodOfMovement();
     }

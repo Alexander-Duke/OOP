@@ -6,6 +6,11 @@ public class Bird extends Animal implements InfoMethodMovement {
         super(name, age);
     }
 
+    @Override
+    public void makeSound() {
+        System.out.print("Bird make sound \"chik-chirik\"\n");
+    }
+
     private boolean flying = true;
 
     public void methodOfMovement() {

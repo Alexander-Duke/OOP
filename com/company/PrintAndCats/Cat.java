@@ -16,8 +16,15 @@ public class Cat extends Animal implements InfoMethodMovement {
             this.age = age;
     }
 
+    @Override
+    public void makeSound() {
+        System.out.print("cat make sound Meow \n");
+    }
+
     public void methodOfMovement() {
         System.out.print("cat running speed is " + this.runningSpeed + "km/h\n");
     }
+
+
 }
 
