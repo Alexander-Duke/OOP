@@ -3,7 +3,7 @@ package com.company.PrintAndCats;
 public class Main {
     public static void main(String[] args) {
         final Cat cat = new Cat("Barsik", 40);
-        final Bird bird = new Bird("Sparrow", 3);
+        final Bird bird = new Bird("Sparrow", 3,true);
         Printer p = new Printer();
 
         System.out.println(cat);
@@ -18,6 +18,6 @@ public class Main {
 
     //Application of the interface
     public static void outputInfoMethodOfMovement(InfoMethodMovement info){
-        info.methodOfMovement();
+        info.movement();
     }
 }

@@ -21,7 +21,7 @@ public class Cat extends Animal implements InfoMethodMovement {
         System.out.print("cat make sound Meow \n");
     }
 
-    public void methodOfMovement() {
+    public void movement() {
         System.out.print("cat running speed is " + this.runningSpeed + "km/h\n");
     }
 
