@@ -7,6 +7,6 @@ public class Printer {
     }
 
     public void printCatWithGreeting(Cat cat, String greeting) {
-        System.out.printf("%s %s.", greeting, cat.getName());
+        System.out.printf("%s %s.\n", greeting, cat.getName());
     }
 }

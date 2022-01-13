@@ -2,19 +2,22 @@ package com.company.PrintAndCats;
 
 public class Main {
     public static void main(String[] args) {
-        final Cat redCat = new Cat("Barsik", 40);
+        final Cat cat = new Cat("Barsik", 40);
+        final Bird bird = new Bird("Sparrow", 3,true);
+        Printer p = new Printer();
 
-        final Cat blackCat = new Cat("Murka", 3);
+        System.out.println(cat);
+        p.printCat(cat);
+        p.printCatWithGreeting(cat, "Hello");
 
-       Printer p = new Printer();
+        outputInfoMethodOfMovement(cat);
+        cat.makeSound();
+        outputInfoMethodOfMovement(bird);
+        bird.makeSound();
+    }
 
-        System.out.println(blackCat);
-        System.out.println(redCat);
-
-        p.printCat(blackCat);
-        p.printCat(redCat);
-        p.printCatWithGreeting(blackCat, "Hello");
-
-
+    //Application of the interface
+    public static void outputInfoMethodOfMovement(InfoMethodMovement info){
+        info.movement();
     }
 }
