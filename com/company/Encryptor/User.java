@@ -1,11 +1,11 @@
 package com.company.Encryptor;
 
-public class Users {
+public class User {
     protected String userName;
     protected String password;
 
 
-    public Users(String userName, String password) {
+    public User(String userName, String password) {
         this.userName = userName;
         this.password = password;
     }

@@ -1,6 +1,17 @@
 package com.company.Encryptor;
 
 public class Decrypt {
+    private static Decrypt instance;
+
+    private Decrypt() {
+    }
+
+    public static Decrypt getInstance() {
+        if (instance == null) {
+            instance = new Decrypt();
+        }
+        return instance;
+    }
 
     public String decryptionPassword(String encryptionPassword) {
         int[] arrayPasswordInAscii = encryptionPasswordToArray(encryptionPassword);
@@ -8,17 +19,15 @@ public class Decrypt {
     }
 
     private String processingDecrypt(int[] array) {
-        String depas = "";
+        StringBuilder depas = new StringBuilder("");
         char[] array2 = new char[array.length];
         for (int i = 0; i < array.length; i++) {
-            array2[i] = (char) (array[i] - i);
+            array2[i] = (char) (array[i] - i * 2);
         }
-        for (int i = 0; i < array2.length; i++) {
-            if (i == 0) {
-                depas = "" + array2[i];
-            } else depas = depas + array2[i];
+        for (char c : array2) {
+            depas.append(c);
         }
-        return depas;
+        return depas.toString();
     }
 
     private int[] encryptionPasswordToArray(String encryptionPassword) {

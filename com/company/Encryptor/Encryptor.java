@@ -1,43 +1,50 @@
 package com.company.Encryptor;
 
 public class Encryptor {
+    private static Encryptor instance;
 
-    public String encryptionPassword(Users users) {
-        String passwordOriginal = users.getPassword();
-        String[] arrayPasswordInAsciiEncrypted = encryptionToArray(passwordOriginal);
+    private Encryptor() {
+    }
+
+    public static Encryptor getInstance() {
+        if (instance == null) {
+            instance = new Encryptor();
+        }
+        return instance;
+    }
+
+    public String encryptPassword(String passwordOriginal) {
+        String[] arrayPasswordInAsciiEncrypted = encryptToArray(passwordOriginal);
         return arrayToString(arrayPasswordInAsciiEncrypted);
     }
 
-    private String[] encryptionToArray(String passwordOriginal) {
+    private String[] encryptToArray(String passwordOriginal) {
         int sizeArray = passwordOriginal.length();
         String[] arrayPasswordInAscii = new String[sizeArray];
 
         for (int i = 0; i < sizeArray; i++) {
             char character = passwordOriginal.charAt(i);
             int asciiNum = character;
-            int encryptedAsciiNum = asciiNum + i;
-            String asciiToString = "" + encryptedAsciiNum;
+            int encryptedAsciiNum = asciiNum + i * 2;
+            StringBuilder asciiToString = new StringBuilder("");
+            asciiToString.append(encryptedAsciiNum);
             if (asciiToString.length() == 1) {
-                asciiToString = "00" + asciiToString;
+                asciiToString.insert(0, "00");
             } else if (asciiToString.length() == 2) {
-                asciiToString = "0" + asciiToString;
+                asciiToString.insert(0, "0");
             }
-            arrayPasswordInAscii[i] = asciiToString;
+            arrayPasswordInAscii[i] = asciiToString.toString();
         }
         return arrayPasswordInAscii;
     }
 
     private String arrayToString(String[] arrayPasswordInAsciiEncrypted) {
-        String pas = "";
-        for (int i = 0; i < arrayPasswordInAsciiEncrypted.length; i++) {
-            if (i == 0) {
-                pas = arrayPasswordInAsciiEncrypted[i];
-            } else pas = pas + arrayPasswordInAsciiEncrypted[i];
+        StringBuilder pas = new StringBuilder("");
+        for (String s : arrayPasswordInAsciiEncrypted) {
+            pas.append(s);
         }
-        return pas;
+        return pas.toString();
     }
-
-
 }
 
 

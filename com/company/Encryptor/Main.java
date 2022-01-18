@@ -2,12 +2,13 @@ package com.company.Encryptor;
 
 public class Main {
     public static void main(String[] args) {
-        Users user01 = new UsersAdmins("admin1", "987654321");
-        Encryptor encryptor01 = new Encryptor();
-        String encryptionPassword = encryptor01.encryptionPassword(user01);
+        User user01 = new UserAdmin("admin1", "987654321");
+        String passwordOriginal = user01.getPassword();
+        Encryptor encryptor01 = Encryptor.getInstance();
+        String encryptionPassword = encryptor01.encryptPassword(passwordOriginal);
         System.out.println("encryptionPassword " + encryptionPassword);
-        Decrypt decrypt01 = new Decrypt();
-        String s = decrypt01.decryptionPassword(encryptionPassword);
+        Decrypt decrypt = Decrypt.getInstance();
+        String s = decrypt.decryptionPassword(encryptionPassword);
         System.out.println("decryptionPassword " + s);
     }
 }
